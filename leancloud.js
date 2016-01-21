@@ -13,21 +13,18 @@ function LeanCloud(options) {
   this.appKey = options.appKey;
   this.host = 'https://leancloud.cn';
   this.v = '1.1';
+  this.baseUrl = this.host + '/' + this.v;
 }
 
 /**
  * 推送消息
  * https://leancloud.cn/docs/push_guide.html#推送消息
  * @param {Object} data
- * @param {Function} callback (err, data)
+ * @param {Function} callback (err, body)
  */
 LeanCloud.prototype.push = function(data, callback) {
-  var url = this.__url('/push');
+  var url = this.baseUrl + '/push';
   this.__post(url, data, {}, callback);
-};
-
-LeanCloud.prototype.__url = function(path) {
-  return this.host + '/' + this.v + path;
 };
 
 LeanCloud.prototype.__post = function(url, data, options, callback) {
@@ -53,7 +50,9 @@ LeanCloud.prototype.__post = function(url, data, options, callback) {
       return callback(new Error('NO RESPONSE'));
     }
     if (body.error) {
-      return callback(new Error(body.error));
+      var e = new Error(body.error);
+      e.code = body.code;
+      return callback(e);
     }
     return callback(null, body);
   });
