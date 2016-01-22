@@ -1,3 +1,4 @@
 module.exports = {
-  LeanCloud: require('./leancloud')
+  LeanCloud: require('./leancloud'),
+  JPush: require('./jpush')
 };
