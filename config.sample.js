@@ -6,5 +6,9 @@ module.exports = {
   jPush: {
     appKey: '',
     masterSecret: ''
+  },
+  baidu: {
+    apiKey: '',
+    secretKey: ''
   }
 };

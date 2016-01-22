@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/ShaopengHe/push-demo#readme",
   "dependencies": {
+    "baidu-push": "^0.6.1",
     "request": "^2.67.0",
     "underscore": "^1.8.3"
   },
