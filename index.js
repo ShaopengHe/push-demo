@@ -1,5 +1,5 @@
 module.exports = {
-  LeanCloud: require('./leancloud'),
-  JPush: require('./jpush'),
-  Baidu: require('./baidu')
+  LeanCloud: require('./lib/leancloud'),
+  JPush: require('./lib/jpush'),
+  Baidu: require('./lib/baidu')
 };
