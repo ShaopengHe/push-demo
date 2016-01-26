@@ -10,5 +10,9 @@ module.exports = {
   baidu: {
     apiKey: '',
     secretKey: ''
+  },
+  uMeng: {
+    appKey: '',
+    appMasterSecret: ''
   }
 };
