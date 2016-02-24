@@ -14,5 +14,9 @@ module.exports = {
   uMeng: {
     appKey: '',
     appMasterSecret: ''
+  },
+  xinGe: {
+    accessId: '',
+    secretKey: ''
   }
 };
